@@ -1,0 +1,307 @@
+
+**** 03/27/25 21:10:40 *** PSpice 24.1.0 (26 February 2025) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Case 1"  [ c:\users\administrator\appdata\roaming\spb_data\cdssetup\workspace\projects\lightml\lightml-pspic
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Case 1.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\Administrator\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice\24.1.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 200ns 0 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source LIGHTML
+I_I5         0 N58193  DC 0Adc AC 0Aac
++PULSE 200n 700n+200n  0 0.01n 0.01n 0.1n 100n
+C_C3         0 N58193  15f  TC=0,0 
+R_R4         0 N58193  500k TC=0,0 
+V_Vref3         N59845 0 1
+X_U2         N62154 N59845 0 N65801 N59717 N59737 
++ N59649 N59653 N59685 N59705 N59721 N59733 N59741 N59761 $G_DPWR $G_DGND
++  ADC8break 
++ PARAMS: MNTYMXDLY=0 IO_LEVEL=0
+V_V16         N60586 0  
++PULSE 0 1 5n 0.01n 0.01n 1u 2u
+R_R6         0 N60586  500k TC=0,0 
+V_V17         N60884 0  
++PULSE 0 4.5 50n 0.01n 0.01n 50n 100n
+X_S3    N62334 0 N65718 N62154 SCHEMATIC1_S3 
+V_V18         N62334 0  
++PULSE 0 1 100n 0.01n 0.01n 100n 200n
+I_I8         N64464 0 DC 0Adc AC 0Aac
++PULSE 100nA 700nA 0 0 0 0.1ns 0.2ns
+C_C7         N65718 0  15fF IC=0 TC=0,0 
+R_R13         N64464 0  200000k TC=0,0 
+I_I9         0 N64464 DC 0Adc AC 0Aac
++PULSE 200nA 400nA 0 0 0 0.1ns 0.2ns
+X_U10         N60884 N65801 $G_DPWR $G_DGND BUF
+R_R14         N64464 N65718  500 TC=0,0 
+
+.subckt SCHEMATIC1_S3 1 2 3 4  
+S_S3         3 4 1 2 Sbreak
+RS_S3         1 2 1G
+.ends SCHEMATIC1_S3
+
+**** RESUMING "Case 1.cir" ****
+.END
+
+
+**** Generated AtoD and DtoA Interfaces ****
+
+*
+* Analog/Digital interface for node N60884
+*
+* Moving X_U10.U1:IN1 from analog node N60884 to new digital node N60884$AtoD
+X$N60884_AtoD1
++ N60884
++ N60884$AtoD
++ $G_DPWR
++ $G_DGND
++ AtoDdefault
++       PARAMS: CAPACITANCE=   0     
+*
+* Analog/Digital interface power supply subcircuits
+*
+X$DIGIFPWR 0 DIGIFPWR
+
+
+**** 03/27/25 21:10:40 *** PSpice 24.1.0 (26 February 2025) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Case 1"  [ c:\users\administrator\appdata\roaming\spb_data\cdssetup\workspace\projects\lightml\lightml-pspic
+
+
+ ****     Voltage Controlled Switch MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               Sbreak          
+         RON    1            
+        ROFF    1.000000E+06 
+         VON    1            
+        VOFF    0            
+
+
+**** 03/27/25 21:10:40 *** PSpice 24.1.0 (26 February 2025) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Case 1"  [ c:\users\administrator\appdata\roaming\spb_data\cdssetup\workspace\projects\lightml\lightml-pspic
+
+
+ ****     Digital Output MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               DO74            
+    TIMESTEP  100.000000E-12 
+      S0NAME X               
+       S0VHI    2            
+       S0VLO     .8          
+      S1NAME 0               
+       S1VHI     .8          
+       S1VLO   -1.5          
+      S2NAME R               
+       S2VHI    1.4          
+       S2VLO     .8          
+      S3NAME R               
+       S3VHI    2            
+       S3VLO    1.3          
+      S4NAME X               
+       S4VHI    2            
+       S4VLO     .8          
+      S5NAME 1               
+       S5VHI    7            
+       S5VLO    2            
+      S6NAME F               
+       S6VHI    2            
+       S6VLO    1.3          
+      S7NAME F               
+       S7VHI    1.4          
+       S7VLO     .8          
+
+
+**** 03/27/25 21:10:40 *** PSpice 24.1.0 (26 February 2025) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Case 1"  [ c:\users\administrator\appdata\roaming\spb_data\cdssetup\workspace\projects\lightml\lightml-pspic
+
+
+ ****     Digital Gate MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D_PLD_GATE      
+      TPLHMN    0            
+      TPLHTY    0            
+      TPLHMX    0            
+      TPHLMN    0            
+      TPHLTY    0            
+      TPHLMX    0            
+
+
+**** 03/27/25 21:10:40 *** PSpice 24.1.0 (26 February 2025) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Case 1"  [ c:\users\administrator\appdata\roaming\spb_data\cdssetup\workspace\projects\lightml\lightml-pspic
+
+
+ ****     Analog to Digital Converter MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U2.ADC8TIM    
+      TPCSMN    0            
+      TPCSTY    0            
+      TPCSMX    0            
+      TPSDMN    0            
+      TPSDTY    0            
+      TPSDMX    0            
+      TPDSMN    0            
+      TPDSTY    0            
+      TPDSMX    0            
+
+
+**** 03/27/25 21:10:40 *** PSpice 24.1.0 (26 February 2025) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Case 1"  [ c:\users\administrator\appdata\roaming\spb_data\cdssetup\workspace\projects\lightml\lightml-pspic
+
+
+ ****     Digital IO  MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IO_STD          IO_PLD          IO_DFT          
+        DRVL  104                                            
+        DRVH   96.4                                          
+       AtoD1 AtoD_STD                        AtoD_STD        
+       AtoD2 AtoD_STD_NX                     AtoD_STD_NX     
+       AtoD3 AtoD_STD                        AtoD_STD        
+       AtoD4 AtoD_STD_NX                     AtoD_STD_NX     
+       DtoA1 DtoA_STD                        DtoA_STD        
+       DtoA2 DtoA_STD                        DtoA_STD        
+       DtoA3 DtoA_STD                        DtoA_STD        
+       DtoA4 DtoA_STD                        DtoA_STD        
+      TSWHL1    1.511000E-09                                 
+      TSWHL2    1.487000E-09                                 
+      TSWHL3    1.511000E-09                                 
+      TSWHL4    1.487000E-09                                 
+      TSWLH1    3.517000E-09                                 
+      TSWLH2    3.564000E-09                                 
+      TSWLH3    3.517000E-09                                 
+      TSWLH4    3.564000E-09                                 
+       TPWRT  100.000000E+03  100.000000E+03  100.000000E+03 
+
+
+WARNING(ORPSIM-15452): Pulse Period < (Rise Time + Fall Time + Pulse Width) for I_I8.
+
+WARNING(ORPSIM-15459): In device I_I8, default values (TR=1.00e-09, TF=1.00e-09) are used for zero TR and TF. Use the DEFTR and DEFTF options to control these defaults. To disable default value usage for zero TR and TF, specify the DISABLE_DEFAULT_PULSE_PARAMS option.
+
+WARNING(ORPSIM-15452): Pulse Period < (Rise Time + Fall Time + Pulse Width) for I_I9.
+
+WARNING(ORPSIM-15459): In device I_I9, default values (TR=1.00e-09, TF=1.00e-09) are used for zero TR and TF. Use the DEFTR and DEFTF options to control these defaults. To disable default value usage for zero TR and TF, specify the DISABLE_DEFAULT_PULSE_PARAMS option.
+
+WARNING(ORPSIM-15452): Pulse Period < (Rise Time + Fall Time + Pulse Width) for I_I8.
+
+WARNING(ORPSIM-15452): Pulse Period < (Rise Time + Fall Time + Pulse Width) for I_I9.
+
+**** 03/27/25 21:10:40 *** PSpice 24.1.0 (26 February 2025) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Case 1"  [ c:\users\administrator\appdata\roaming\spb_data\cdssetup\workspace\projects\lightml\lightml-pspic
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N58193)     .1000 (N59845)    1.0000 (N60586)    0.0000 (N60884)    0.0000     
+
+(N62154) 200.0E-12 (N62334)    0.0000 (N64464) 50.00E-06 (N65718) 200.0E-12     
+
+($G_DGND)    0.0000                   ($G_DPWR)    5.0000                   
+
+
+
+ DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE
+
+
+(N60884$AtoD) : 0  (  N65801) : 0     (  N59737) : X     (  N59705) : X         
+
+(  N59761) : X     (  N59653) : X     (  N59717) : 0     (  N59741) : X         
+
+(  N59649) : X     (  N59721) : X     (  N59733) : X     (  N59685) : X     
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vref3     -1.000E-12
+    V_V16        0.000E+00
+    V_V17        0.000E+00
+    V_V18        0.000E+00
+    X$DIGIFPWR.VDPWR  -5.000E-06
+    X$DIGIFPWR.VDGND  -5.000E-06
+
+    TOTAL POWER DISSIPATION   2.50E-05  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 03/27/25 21:10:40 *** PSpice 24.1.0 (26 February 2025) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Case 1"  [ c:\users\administrator\appdata\roaming\spb_data\cdssetup\workspace\projects\lightml\lightml-pspic
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .02
+

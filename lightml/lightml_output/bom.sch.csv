@@ -1,0 +1,9 @@
+Item Number,Quantity,Value,Description,Part Number,Part Reference,Manufacturer Name,Manufacturer Part Number,ID,SKU,ALT_MPN,ALT_MFR
+1,1,15f,,,C3,,,205,,,
+2,1,20fF,,,C7,,,375,,,
+3,1,500k,,,R4,,,236,,,
+4,1,500k,,,R6,,,313,,,
+5,1,200000k,,,R13,,,378,,,
+6,1,500,,,R14,,,401,,,
+7,1,ADC8break,,,U2,,,258,,,
+8,1,BUF,,,U10,,,393,,,

@@ -69,6 +69,7 @@ ult_total_time = 0
 
 # print the details of the simulation
 print_details = False
+print_ult = False
 
 
 
@@ -596,10 +597,10 @@ def print_utilization(total_time=0, batch_size=32):
     global ult_crossbar_time
     global ult_ADC_time
     global ult_total_time
-    global print_details
+    global print_ult
 
     ult_total_time = total_time
-    if print_details:
+    if print_ult:
         print('The utilization for the memory read is: ', ult_memory_read_time / ult_total_time)
         print('The utilization for the memory write is: ', ult_memory_write_time / ult_total_time)
         print('The utilization for the crossbar is: ', ult_crossbar_time / ult_total_time)
@@ -624,9 +625,9 @@ def print_utilization(total_time=0, batch_size=32):
 
 def main():
     args = parser.parse_args()
-    global print_details
+    global print_ult
 
-    print_details = args.print_utilization
+    print_ult = args.print_utilization
 
     eval_function = args.evaluate
 
@@ -692,14 +693,21 @@ def main():
 
 
     # test conv network
-    if eval_function == 'conv_network':
+    if eval_function == 'conv_networks':
         for dataset in ['cifar100', 'imagenet', 'cifar10']:
-            print('The dataset is: ', dataset)
+            print('-------------------------------------')
+            print('Evaluating the ', dataset, ' Dataset')
             for model in ['resnet18', 'resnet50', 'resnet101', 'mobilenet_v2', 'mobilenet_v3_large', 'VGG16', 'VGG11', 'VGG19']:
+                print('Evaluating the model: ', model)
                 model_eval(model, dataset, batch_size)
+                print(' ')
+
+            print(' ')
+            print(' ')
+            print('-------------------------------------')
 
     # test attention network
-    if eval_function == 'attention_network':
+    if eval_function == 'attention_networks':
         ## llama 3.1-8B
 
         token_class = 128256
